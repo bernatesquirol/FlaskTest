@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% from 'product/macroProd.html' import prova %}
+
+{% block title %}
+    Edit Product
+{% endblock title %}
+
+{% block main %}
+    <div class="row">
+        <div class="login well offset2 span8">
+            <form method="post" class="form-horizontal">
+                <legend>Create new product</legend>
+                {% if error %}<p class="alert alert-error">{{ error }}</p>{% endif %}
+                <div class="control-group">
+                    {{ form.name.label(class="control-label") }}
+                    <div class="controls">
+                        {{ form.name(placeholder=product.name) }}
+                        {% for error in form.name.errors %}<span class="help-inline">{{ error }}</span>{% endfor %}
+                    </div>
+                </div>
+                <div class="control-group">
+                    {{ form.description.label(class="control-label") }}
+                    <div class="controls">
+                        {{ form.description(placeholder=product.description) }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    {{ form.price.label(class="control-label") }}
+                    <div class="controls">
+                        {{ form.price(placeholder=product.price) }}
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock main %}

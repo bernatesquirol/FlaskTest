@@ -1,0 +1,9 @@
+Flask
+Flask-Login
+Flask-Script
+Flask-PyMongo
+WTForms
+bson
+Jinja2
+dnspython
+gunicorn
